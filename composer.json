@@ -1,0 +1,62 @@
+{
+    "name": "dgtlinf/salary-calculator",
+    "description": "Multi-country salary calculator for Laravel, with modular country providers",
+    "keywords": [
+        "laravel",
+        "salary",
+        "payroll",
+        "gross",
+        "net",
+        "tax",
+        "serbia",
+        "eor",
+        "calculator"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Digital Infinity",
+            "email": "office@digitalinfinity.rs"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "spatie/laravel-package-tools": "^1.92",
+        "cmixin/business-day": "^1.20"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dgtlinf\\SalaryCalculator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dgtlinf\\SalaryCalculator\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dgtlinf\\SalaryCalculator\\SalaryCalculatorServiceProvider"
+            ],
+            "aliases": {
+                "SalaryCalculator": "Dgtlinf\\SalaryCalculator\\Facades\\SalaryCalculator",
+                "AverageHourlyRate": "Dgtlinf\\SalaryCalculator\\Facades\\AverageHourlyRate"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "pestphp/pest": "^4.1",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "orchestra/testbench": "^10.6"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
