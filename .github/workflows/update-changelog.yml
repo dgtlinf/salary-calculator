@@ -4,6 +4,9 @@ on:
   release:
     types: [released]
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -13,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Changelog
         uses: stefanzweifel/changelog-updater-action@v1
@@ -26,3 +30,4 @@ jobs:
           branch: main
           commit_message: "chore: update CHANGELOG for ${{ github.event.release.tag_name }}"
           file_pattern: CHANGELOG.md
+          token: ${{ secrets.GITHUB_TOKEN }}
